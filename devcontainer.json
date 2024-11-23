@@ -1,0 +1,8 @@
+{
+    "name": "My Dev Container",
+    "extensions": [
+      "ritwickdey.LiveServer",
+      "esbenp.prettier-vscode"
+    ]
+  }
+  
