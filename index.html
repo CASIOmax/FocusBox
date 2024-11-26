@@ -221,16 +221,17 @@
         font-size: 18px;
         text-align: center;
       }
+
+
       .benefits{
         display: grid;
         grid-template-columns: repeat(2,1fr);
         gap: 20px;
         margin-left: 135px;
         margin-right: 135px;
-        margin-top: 40px
-
+        margin-top: 40px;
+        margin-bottom:60px;
       }
-
       .benefitsMain-Heading{
         font-weight:bold;
         font-size: 28px;
@@ -280,7 +281,6 @@
         font-weight:bold;
         font-size: 25px;
    
-        
       }
       
       .benefits__one:hover .Numbers,
@@ -292,8 +292,108 @@
       }
       /*<-----------------Page-03---------------->*/
       /*<-----------------Page-04---------------->*/
-
+      .FAQsSesction{
+        display: flex;
+        margin-top: 40px;
+        margin-left: 130px;
+        margin-right: 130px;
+        gap: 25px;
+        font-size: 25px;
+        line-height: 0.8em;
+      }
+      .FAQsSesction img{
+        height: 700px;
+      }
       /*<-----------------Page-04---------------->*/
+      /*<-----------------Page-05---------------->*/
+      footer{
+        margin-left: 135px;
+        margin-right: 135px;
+      }
+      footer li{
+        list-style: none;
+      }
+      footer a{
+        text-decoration: none;
+        color:white;
+      }
+      .sub-footer{
+        display: flex;
+        gap: 70px;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      .sub-footer ul{
+        padding-left: 0px;
+      }
+      .sub-footer li{
+        margin-bottom: 20px;
+        transition-duration: 1s;
+      }
+      .sub-footer li:hover{
+        scale: 103%;
+      }
+      .Companyinfo{
+        flex-grow: 3;
+      }
+      .Companyinfo p{
+        font-size: 14px;
+        font-weight: 100;
+      }
+      .Navigatediv{
+        flex-grow: 1;
+      }
+      .Companydiv{
+        flex-grow: 2;
+      }
+      .Downloaddiv{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .Downloaddiv h3{
+        margin-bottom: 0px;
+      }
+      .Downloaddiv button{
+        border-radius: 20px;
+        border: 2px white solid;
+        background-color: #3F3E3F;
+        color: white;
+        width: 130px;
+        height: 36px;
+      }
+      .Copyright{
+        text-align: center;
+      }
+      .Gplay-btn{
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        transition-duration: 1s;
+      }
+      .Gplay-btn:hover,
+      .Appstore-btn:hover{
+        scale: 105%;
+        border: 2px #3353FF solid;
+        color: #3353FF;
+        background-color: rgb(136, 136, 136);
+      }
+
+      .Appstore-btn{
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+      }
+      .Uzumaki{
+        color: #3353FF;
+        font-weight: bold;
+      }
+      /*<-----------------Page-05---------------->*/
 
     </style>
   </head>
@@ -442,13 +542,19 @@
      <!-----------------Page-04---------------->
 
     <section id="FAQs">
-      <h2>Here are some Frequently</h2>
-      <h2>Asked Questions</h2>
+      <div class="Secondary-Heading">
+        <h2>Here are some Frequently</h2>
+        <h2><span class="txtcolor-change">Asked Questions</span></h2>
+      </div>
+      <div class="Productdescription-03">
       <p>
         Explore our comprehensive FAQ section, designed to answer all your
         pressing questions<br> about FocusBox. From Technical support to feature
         explainations.
       </p>
+      </div>
+      <div class="FAQsSesction">
+      <div class="FAQs">
       <p>What is a FocusBox?</p>
       <p>ANS</p>
       <p>How can FocusBox help me?</p>
@@ -465,34 +571,47 @@
       <p>ANS</p>
       <p>How to get started with FocusBox?</p>
       <p>ANS</p>
-      <img src="img-landingpage/Productdisp-5.png" style="width: 40%" />
+    </div>
+      <img src="img-landingpage/Productdisp-5.png" />
+    </div>
     </section>
     <!-----------------Page-04---------------->
 
     <footer>
-      <h2>FocusBox</h2>
-      <p>
-        Developed to help students stay organized, simplifying task management,
-        enabling better focus, time management, and goal achievement.
-      </p>
-      <h3>Navigate</h3>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Sign In</a></li>
-      </ul>
+      <div class="sub-footer">
+      <div class="Companyinfo">
+        <h2>FocusBox</h2>
+        <p>
+          Developed to help students stay organized, simplifying task<br> management,
+          enabling better focus, time management, and<br> goal achievement.
+        </p>
+      </div>
+
+      <div class="Navigatediv">
+        <h3>Navigate</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Sign Up</a></li>
+          <li><a href="#">Sign In</a></li>
+        </ul>
+      </div>
+      <div class="Companydiv">
       <h3>Company</h3>
       <ul>
         <li><a href="#">Terms & Conditions</a></li>
         <li><a href="#">Privacy Policy</a></li>
         <li><a href="#">Cookies Preferences</a></li>
       </ul>
+      </div>
+      <div class="Downloaddiv">
       <h3>Download App</h3>
-      <button><img src="img-landingpage/Google-play.png" />Google Play</button>
-      <button><img src="img-landingpage/App-store.png" />App Store</button>
-      <hr>
-      <p> © 2024 Developed by the Uzumaki Clan - All Rights Reserved</p>
+      <button class="Gplay-btn"><img src="img-landingpage/Google-play.png" />Google Play</button>
+      <button class="Appstore-btn"><img src="img-landingpage/App-store.png" />App Store</button>
+      </div>
+    </div>
+      <hr class="Bottomline">
+      <p class="Copyright"> © 2024 Developed by the <span class="Uzumaki">Uzumaki Clan</span> - All Rights Reserved</p>
     </footer>
   </body>
 </html>
