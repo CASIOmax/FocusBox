@@ -4,23 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FocusBox</title>
-    <!--Code for Favicon, that appears in the tab-->
     <link rel="icon" href="img-landingpage/Product 1.png" type="image/png" />
-    <!--Allows to add the Roboto Font to the Code-->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      body {
+        color: white;
+        background-color: #191919;
+        font-family: "Roboto", sans-serif;
+      }
+
+      /*<-----------------Navigation---------------->*/
+      nav{
+        padding-top: 25px;
+      }
+      nav ul{
+        background-color: black;
+        display: flex;
+        justify-content: flex-end;
+        gap: 75px;
+        align-items: center;
+        list-style: none;
+        height: 50px;
+        width: 85%;
+        border-radius: 30px;
+        margin: 0 auto;
+        font-size: 20px;
+
+      }
+      nav ul li:first-child {
+        margin-right: auto;
+      }
+      nav ul li:last-child {
+        padding-right: 12px;
+      }
+      nav a{
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+      }
+      #signUp-btn{
+        border-radius: 20px;
+        background-color: #535353;
+        border: 2px solid #3353FF;
+        color: white;
+        padding: 6px 12px;
+        font-weight: bold;
+        transition-duration: 0.4s;
+        font-size: 17px;
+
+      }
+      #signUp-btn:hover{
+        background-color: #3353FF; 
+        color: white;
+        scale: 115%;
+      }
+      /*<-----------------Navigation---------------->*/
+    </style>
   </head>
   <body>
     <header>
       <nav>
         <ul>
-          <li><a href="#">FocusBox</a></li>
+          <li><img src="img-landingpage/Logo.png" alt="FocusBox Logo" style="width: 100px; height: 25px;"/></li>
           <li><a href="#">Home</a></li>
           <li><a href="#">About Us</a></li>
-          <li><button>Sign Up</button></li>
+          <li><button id="signUp-btn">Sign Up</button></li>
         </ul>
       </nav>
     </header>

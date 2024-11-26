@@ -1,5 +1,32 @@
-body {
+*{
+  /* margin: 0;
+  padding: 0; */
+}
+/* body {
   color: white;
   background-color: #191919;
   font-family: "Roboto", sans-serif;
 }
+nav{
+  background-color: black;
+  height: 40px;
+}
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: flex-end;
+}
+ul li:first-child {
+  margin-left: auto; 
+}
+ul li:first-child a {
+  color: red;
+  display: block;
+  margin-left: 0;
+}
+nav a{
+  text-decoration: none;
+  color: white;
+} */
