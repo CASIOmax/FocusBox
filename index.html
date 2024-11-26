@@ -162,6 +162,7 @@
         margin-left:130px ;
         margin-right:130px ;
         gap: 20px;
+        margin-bottom: 60px;
       }
       .Features h3{
         font-weight:bold;
@@ -208,7 +209,91 @@
         border: 3px white solid;
       }
       /*<-----------------Page-02---------------->*/
+      /*<-----------------Page-03---------------->*/
+      .Help-img{
+        width: 75%;
+        display: flex;
+        margin: 0 auto;
+        margin-top: 40px;
+      }
+      .Productdescription-03 p{
+        margin: 15px;
+        font-size: 18px;
+        text-align: center;
+      }
+      .benefits{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        margin-left: 135px;
+        margin-right: 135px;
+        margin-top: 40px
 
+      }
+
+      .benefitsMain-Heading{
+        font-weight:bold;
+        font-size: 28px;
+        margin-top:15px ;
+        margin-bottom: 20px;
+      }
+      .benefits p{
+        margin-top: 0px;
+        margin-bottom: 10px;
+      }
+      .benefits__one,
+      .benefits__two,
+      .benefits__three,
+      .benefits__four{
+        background-color:#535353 ;
+        padding: 15px 20px;
+        border-radius: 20px;
+        border: 2px white solid;
+        transition-duration: 0.4s;
+      }
+
+      .benefits__one:hover,
+      .benefits__two:hover,
+      .benefits__three:hover,
+      .benefits__four:hover{
+        scale: 102%;
+        border: 4px #3353FF solid;
+      }
+      .benefits__one:hover h3,
+      .benefits__two:hover h3,
+      .benefits__three:hover h3,
+      .benefits__four:hover h3{
+        color: #3353FF;
+      }
+   
+      .Numbers{
+        width: 50px;
+        height: 50px;
+        background-color:#858585 ;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        border-radius: 30px;
+        border: 3px white solid;
+        transition-duration: 1s;
+
+        font-weight:bold;
+        font-size: 25px;
+   
+        
+      }
+      
+      .benefits__one:hover .Numbers,
+      .benefits__two:hover .Numbers,
+      .benefits__three:hover .Numbers,
+      .benefits__four:hover .Numbers{
+        scale: 102%;
+        border: 2px #3353FF solid;
+      }
+      /*<-----------------Page-03---------------->*/
+      /*<-----------------Page-04---------------->*/
+
+      /*<-----------------Page-04---------------->*/
 
     </style>
   </head>
@@ -305,40 +390,52 @@
       <div class="Secondary-Heading">
       <h2>How <span class="txtcolor-change">FocusBox helps</span> you?</h2>
       </div>
+      <div class="Productdescription-03">
       <p>
         FocusBox provides the tools you need to stay organized, manage your time
         effectively, and<br> keep you focused on reaching your goals, making task
         management simple and stress-free.
       </p>
-      <img src="img-landingpage/Productdisp-4.png" style="width: 75%" />
+      </div>
+      <img src="img-landingpage/Productdisp-4.png" class="Help-img" alt="Product Image" />
+
       <div class="benefits">
-      <h3>1</h3>
-      <h3>Enhanced Focus</h3>
-      <p>
-        Stay focused on what truly matters by organizing tasks and<br> setting clear
-        priorities.
-      </p>
+        <div class="benefits__one">
+          <div class="Numbers"><h3>1</h3></div>
+          <h3 class="benefitsMain-Heading">Enhanced Focus</h3>
+          <p>
+            Stay focused on what truly matters by organizing tasks and<br> setting clear
+            priorities.
+          </p>
+        </div>
 
-      <h3>2</h3>
-      <h3>Improved Time Management</h3>
-      <p>
-        Stay focused on what truly matters by organizing tasks and<br> setting clear
-        priorities.
-      </p>
+      <div class="benefits__two">
+        <div class="Numbers"><h3>2</h3></div>
+        <h3 class="benefitsMain-Heading">Improved Time Management</h3>
+        <p>
+          Stay focused on what truly matters by organizing tasks and<br> setting clear
+          priorities.
+        </p>
+      </div>
 
-      <h3>3</h3>
-      <h3>Increased Productivity</h3>
-      <p>
-        Break down tasks into manageable steps, helping you achieve<br> more with
-        less stress.
-      </p>
+      <div class="benefits__three">
+        <div class="Numbers"><h3>3</h3></div>
+        <h3 class="benefitsMain-Heading">Increased Productivity</h3>
+        <p>
+          Break down tasks into manageable steps, helping you achieve<br> more with
+          less stress.
+        </p>
+      </div>
 
-      <h3>4</h3>
-      <h3>Goal Achievement</h3>
-      <p>
-        Stay motivated and on track to meet your academic and<br> personal goals
-        through structured task management.
-      </p>
+      <div class="benefits__four">
+        <div class="Numbers"><h3>4</h3></div>
+        <h3 class="benefitsMain-Heading">Goal Achievement</h3>
+        <p>
+          Stay motivated and on track to meet your academic and<br> personal goals
+          through structured task management.
+        </p>
+      </div>
+  
     </div>
     </section>
      <!-----------------Page-03---------------->
