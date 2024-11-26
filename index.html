@@ -63,6 +63,153 @@
         scale: 115%;
       }
       /*<-----------------Navigation---------------->*/
+
+      /*<-----------------Page-01---------------->*/
+      .Main-Heading{
+        text-align: center;
+        font-size: 64px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 40px;
+      }
+      .Main-Heading h1{
+        transition-duration: 1s;
+        margin: 0px 0px;
+      }
+      .Main-Heading h1:hover{
+        scale: 105%;        
+      }
+      .txtcolor-change{
+        color: #3353FF;
+      }
+      .Productdescription-01{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .Productdescription-01 p{
+        margin: 30px;
+        font-size: 24px;
+        text-align: center;
+      }
+      .getStarted-btn{
+        border-radius: 20px;
+        background-color: #535353;
+        border: 2px solid #3353FF;
+        color: white;
+        padding: 6px 12px;
+        font-weight: bold;
+        transition-duration: 0.4s;
+        font-size: 25px;
+        margin-bottom: 40px;
+      }
+      .getStarted-btn:hover{
+        background-color: #3353FF; 
+        color: white;
+        scale: 115%;
+      }
+      #Dashboard-img{
+        display: flex;
+        margin: 0 auto;
+      }
+
+      /*<-----------------Page-01---------------->*/
+      /*<-----------------Page-02---------------->*/
+      .Secondary-Heading{
+        text-align: center;
+        font-size: 42px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+      }
+      .Secondary-Heading h2{
+        transition-duration: 1s;
+        margin: 0px 0px;        
+      }
+      .Secondary-Heading h2:hover{
+        scale: 107%;        
+      }
+      .Productdescription-02 p{
+        margin: 15px;
+        font-size: 20px;
+        text-align: center;
+      }
+      .Productdisp-img{
+        margin: 40px;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+      .Working{
+        margin-top: 40px;
+        margin-left:130px ;
+      }
+      .Working h2{
+        font-size: 42px;
+        transition-duration: 1s;
+        margin-bottom: 15px;
+      }
+      .Working h2:hover{
+        scale: 102%;        
+      }
+      .Working p{
+        margin-top: 0px;
+        font-size: 20px;
+      }
+      .Features{
+        display: flex;
+        margin-left:130px ;
+        margin-right:130px ;
+        gap: 20px;
+      }
+      .Features h3{
+        font-weight:bold;
+        font-size: 30px;
+        margin-top:15px ;
+        margin-bottom: 25px;
+      }
+      .Features p{
+        margin-top: 0px;
+        margin-bottom: 10px;
+
+      }
+      .Features__Signup,
+      .Features__AddTasks,
+      .Features__SetReminders{
+        background-color:#535353 ;
+        padding: 20px 20px;
+        border-radius: 20px;
+        flex-grow: 1;
+        border: 2px white solid;
+        transition-duration: 0.4s;
+
+      }
+      .Features__Signup:hover,
+      .Features__AddTasks:hover,
+      .Features__SetReminders:hover{
+        scale: 102%;
+        border: 4px #3353FF solid;
+      }
+      .Features__Signup:hover .icon-img,
+      .Features__AddTasks:hover .icon-img,
+      .Features__SetReminders:hover .icon-img {
+         border: 2px #3353FF solid;
+
+      }
+      .icon-img{
+        width: 60px;
+        height: 60px;
+        background-color:#858585 ;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        border-radius: 30px;
+        border: 3px white solid;
+      }
+      /*<-----------------Page-02---------------->*/
+
+
     </style>
   </head>
   <body>
@@ -76,95 +223,133 @@
         </ul>
       </nav>
     </header>
-
+    <!-----------------Page-01---------------->
     <section id="Landing-Section">
-      <h1>Empowering Students Maximizing Productivity</h1>
-      <p>
-        FocusBox helps students stay organized and focused on what matters most,
-        with simple tools to track tasks, set priorities, and meet deadlines.
-        Stay on top of your goals and achieve more, one task at a time.
-      </p>
-      <button>Get Started</button>
-      <img src="img-landingpage/Product 1.png" style="width: 75%" />
+      <div class="Main-Heading">
+        <h1><span class="txtcolor-change">Empowering </span>Students</h1>
+        <h1>Maximizing <span class="txtcolor-change">Productivity</span></h1>
+      </div>
+      <div class="Productdescription-01">
+        <p>
+          FocusBox helps students stay organized and focused on what matters most,
+          with<br> simple tools to track tasks, set priorities, and meet<br> deadlines.
+          Stay on top of your goals and achieve<br> more, one task at a time.
+        </p>
+        <button class="getStarted-btn">Get Started</button>
+      </div>
+      <img src="img-landingpage/Product 1.png" id="Dashboard-img" alt="FocusBox Dashboard" style="width: 75%" />
     </section>
-
+     <!-----------------Page-01---------------->
+     <!-----------------Page-02---------------->
     <section id="Product-Details-1">
-      <h2>Maximize Productivity</h2>
+      <div class="Secondary-Heading">
+      <h2>Maximize <span class="txtcolor-change">Productivity</span></h2>
+      <h2>and <span class="txtcolor-change">Effeciecny</span></h2>
+      </div>
+      <div class="Productdescription-02">
       <p>
         FocusBox provides the tools you need to stay organized, manage your time
-        effectively, and keep you focused on reaching your goals, making task
+        effectively, and<br> keep you focused on reaching your goals, making task
         management simple and stress-free.
       </p>
-      <img src="img-landingpage/Productdisp-1.png" style="width: 30%" />
-      <img src="img-landingpage/Productdisp-2.png" style="width: 30%" />
-      <img src="img-landingpage/Productdisp-3.png" style="width: 30%" />
-      <h2>How it Works?</h2>
+      </div>
+      <div class="Productdisp-img">
+        <img src="img-landingpage/Productdisp-1.png" />
+        <img src="img-landingpage/Productdisp-2.png" />
+        <img src="img-landingpage/Productdisp-3.png" />
+      </div>
+      <div class="Working">
+      <h2>How it <span class="txtcolor-change">Works?</span></h2>
       <p>
-        FocusBox simplifies task management with an easy-to-use setup. Create
-        tasks, set priorities, and stay on track with reminders, all in one
+        FocusBox simplifies task management with an easy-to-use<br> setup. Create
+        tasks, set priorities, and stay on track with<br> reminders, all in one
         place.
       </p>
-      <img src="img-landingpage/add-friend.png" />
-      <h3>Sign Up & Set Up</h3>
-      <p>
-        Create your account and personalize your dashboard to get started with
-        task management.
-      </p>
-      <img src="img-landingpage/tasks.png" />
-      <h3>Add Tasks</h3>
-      <p>
-        Never miss a deadline by setting reminders and prioritizing tasks to
-        stay on top of your goals.
-      </p>
-      <img src="img-landingpage/send.png" />
-      <h3>Set Reminders</h3>
-      <p>
-        Never miss a deadline by setting reminders and prioritizing tasks to
-        stay on top of your goals.
-      </p>
+      </div>
+
+      <div class="Features">
+        <div class="Features__Signup">
+        <div class="icon-img"><img src="img-landingpage/add-friend.png"/></div>
+        <h3>Sign Up & Set Up</h3>
+        <p>
+          Create your account and personalize<br> your dashboard to get started with
+          task<br> management.
+        </p>
+        </div>
+        
+        <div class="Features__AddTasks">
+        <div class="icon-img"><img src="img-landingpage/tasks.png" />
+        </div>
+        <h3>Add Tasks</h3>
+        <p>
+          Never miss a deadline by setting<br> reminders and prioritizing tasks to
+          stay<br> on top of your goals.
+        </p>
+        </div>
+
+        <div class="Features__SetReminders">
+        <div class="icon-img"><img src="img-landingpage/send.png" /></div>
+        <h3>Set Reminders</h3>
+        <p>
+          Never miss a deadline by setting<br> reminders and prioritizing tasks to
+          stay<br> on top of your goals.
+        </p>
+        </div>
+      </div>
+
     </section>
+    <!-----------------Page-02---------------->
+     <!-----------------Page-03---------------->
+
     <section id="Product-Details-2">
-      <h2>How FocusBox helps you?</h2>
+      <div class="Secondary-Heading">
+      <h2>How <span class="txtcolor-change">FocusBox helps</span> you?</h2>
+      </div>
       <p>
         FocusBox provides the tools you need to stay organized, manage your time
-        effectively, and keep you focused on reaching your goals, making task
+        effectively, and<br> keep you focused on reaching your goals, making task
         management simple and stress-free.
       </p>
       <img src="img-landingpage/Productdisp-4.png" style="width: 75%" />
+      <div class="benefits">
       <h3>1</h3>
       <h3>Enhanced Focus</h3>
       <p>
-        Stay focused on what truly matters by organizing tasks and setting clear
+        Stay focused on what truly matters by organizing tasks and<br> setting clear
         priorities.
       </p>
 
       <h3>2</h3>
       <h3>Improved Time Management</h3>
       <p>
-        Stay focused on what truly matters by organizing tasks and setting clear
+        Stay focused on what truly matters by organizing tasks and<br> setting clear
         priorities.
       </p>
 
       <h3>3</h3>
       <h3>Increased Productivity</h3>
       <p>
-        Break down tasks into manageable steps, helping you achieve more with
+        Break down tasks into manageable steps, helping you achieve<br> more with
         less stress.
       </p>
 
       <h3>4</h3>
       <h3>Goal Achievement</h3>
       <p>
-        Stay motivated and on track to meet your academic and personal goals
+        Stay motivated and on track to meet your academic and<br> personal goals
         through structured task management.
       </p>
+    </div>
     </section>
+     <!-----------------Page-03---------------->
+     <!-----------------Page-04---------------->
 
     <section id="FAQs">
-      <h2>Here are some Frequently Asked Questions</h2>
+      <h2>Here are some Frequently</h2>
+      <h2>Asked Questions</h2>
       <p>
         Explore our comprehensive FAQ section, designed to answer all your
-        pressing questions about FocusBox. From Technical support to feature
+        pressing questions<br> about FocusBox. From Technical support to feature
         explainations.
       </p>
       <p>What is a FocusBox?</p>
@@ -185,8 +370,9 @@
       <p>ANS</p>
       <img src="img-landingpage/Productdisp-5.png" style="width: 40%" />
     </section>
+    <!-----------------Page-04---------------->
 
-    <>
+    <footer>
       <h2>FocusBox</h2>
       <p>
         Developed to help students stay organized, simplifying task management,
