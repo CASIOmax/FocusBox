@@ -127,24 +127,6 @@
         color: #999999;
         font-weight:bold;
     }
-
-    .google-btn{
-        background-color: #444444;
-        color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
-    .facebook-btn {
-        background-color: #444444;
-        color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
-
     .signin-link {
         text-align: center;
         margin-top: 10px;
@@ -178,6 +160,24 @@
         margin: 0; 
         padding: 0 10px; 
     }
+    .fb-btn {
+        border-radius: 30px;
+        background-color: #444444;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .g-btn{
+        border-radius: 30px;
+        background-color: #444444;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
      </style>
   </head>
   <body>
@@ -188,7 +188,7 @@
       </div>
 
       <div class="form-container">
-        <a href="Landingpage.html" class="back-btn">← Back</a>
+        <a href="index.html" class="back-btn">← Back</a>
         <h1>Sign Up</h1>
         <p>Fill in the appropriate info to create an account on FocusBox</p>
 
@@ -220,18 +220,13 @@
             <hr class="line">
         </div>
 
-          <button class="google-btn">
-            <i class="fab fa-google"></i>Continue with Google
-          </button>
-
-          <button class="facebook-btn">
-            <i class="fab fa-facebook-f"></i>Continue with Facebook
-          </button>
+          <button class="g-btn"><img src="images/g-icon.png" style="width: 20px; height: 20px;"> Continue with Google</button>
+          <button class="fb-btn"><img src="images/fb-icon.png" style="width: 25px; height: 25px;">Continue with Facebook</button>
 
         </form>
 
         <p class="signin-link">
-          Already have an account? <a href="sign-in.html">Sign In</a>
+          Already have an account? <a href="Main-signin.html">Sign In</a>
         </p>
       </div>
     </div>
