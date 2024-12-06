@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <style>
+    body {
+        color: white;
+        background-color: #191919;
+        font-family: "Roboto", sans-serif;
+    }
+    .side-nav{
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 25%;
+        height: 600px;
+        margin-left: 25px;
+        margin-top: 25px;
+        padding-left: 20px;
+        padding-Top: 30px;
+        border-radius: 40px;
+
+        font-size: 22px;
+    }
+    .side-nav a{
+        color: white;
+        text-decoration: none;
+    }
+    .side-nav img{
+        width: 30px;
+        height: 30px;
+    }
+    .navicons{
+        display: flex;
+        align-items: center; /* Center icon and text vertically */
+        gap: 25px;
+        padding: 5px 0; /* Add vertical padding for better spacing between rows */
+ 
+    }
+    .Tasks-link{
+        color: #3353FF;
+        font-weight: bolder;
+    }
+    
+    </style>
+</head>
+<body>
+    <!--Side Navigation-->
+    <div class="side-nav">
+        <div class="navicons">
+            <img src="Icons/Foucs.png" >
+            <a href="#">FocusBox</a>
+        </div>
+        <div class="navicons">
+            <img src="Icons/Dash.png" > 
+            <a href="#">Dashboard</a>
+        </div>
+        <div class="navicons">
+            <img src="Icons/tasks.png" style="width: 38px; height: 38px;">
+            <a href="#"><span class="Tasks-link">Tasks</span></a>
+        </div>
+        <div class="navicons">
+            <img src="Icons/Calender.png" >
+            <a href="#">Calendar</a>
+        </div>
+        <div class="navicons">
+            <img src="Icons/Doc.png" style="width: 27px; height: 32px;" >
+            <a href="#">Document</a>
+        </div>
+        <div class="navicons">
+            <img src="Icons/Trash.png" >
+            <a href="#">Trash</a>
+        </div>
+    </div>
+
+    <!--Profile Picture and time-->
+    <div class="Profile-nav">
+        <div class="time">
+            <p>11:22 PM</p>
+        </div>
+    
+        <div class="Profile">
+            <img src="Icons/dicsord-img.png" style="width: 50px; height: 50px;">
+        </div>
+    </div>
+
+    <!--Profile Picture and time-->
+    <div class="Task-bar">
+        <h1>Tasks</h1>
+        <button class="create-tasks-btn">Create Task + </button>
+    </div>
+
+    <hr class="Line">
+
+    <div class="task-cards">
+        <h3>Web Tech Assigment-1</h3>
+
+        <div class="delete">
+            <img src="Icons/Trash.png" style="width: 20px; height: 20px;">
+        </div>
+        
+        <p>The assignment is very long, we need to<br> work on it as soon as possible. this<br> assignment covers diverse topics such as...</p>
+    
+        <hr class="line-boxes">
+
+        <div>
+            <p><img src="Icons/Dash.png" style="width: 20px; height: 20px;">20 Dec 2024</p>
+            <p><img src="Icons/Dash.png" style="width: 20px; height: 20px;">10:15 PM</p>
+        </div>
+    </div>
+
+    
+</body>
+</html>
