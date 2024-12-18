@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Icons/Notion.png" type="image/png" />
     <title>Documents</title>
     <style>
     body {
@@ -105,69 +106,126 @@
         margin: 15px;
         padding: 20px 20px 0px 20px;
     }
+    .task-cards a{
+        display: block; 
+        color: white;
+        font-weight:bolder ;
+        text-decoration: none;
+        background-color: #3353FF;
+        width: 100%;
+        height: 20px;
+        border-radius: 15px;
+        text-align: center;
+    }
     .task-cards h2{
         color: #3353FF;
-    }
-    .heading-del{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between    
-    }
-    .delete{
-        background-color: red;
-        border-radius: 20px;
-        width: 35px;
-        height: 35px;
-    }
-    .delete img{
-
     }
     .Mastercards-div{
         display: grid;
         grid-template-columns: repeat(3,1fr);
         gap: 20px;
     }
-    
+    .task-cards{
+        padding-bottom: 15px;
+    }
+
+    #uploadModal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding-top: 60px;
+}
+
+#uploadModal form {
+    background-color: #191919;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+#uploadModal input, 
+#uploadModal textarea {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+#uploadModal button {
+    background-color: #3353FF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#uploadModal button:hover {
+    background-color: #0056b3;
+}
+
+#uploadModal .close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+#uploadModal .close-btn:hover {
+    color: white;
+}
+
+    .Task-bar h1{
+        color: #3353FF;
+    }
     </style>
 </head>
 <body>
-    <!--Side Navigation-->
     <div class="side-nav">
         <div class="navicons">
-            <img src="Icons/Foucs.png" >
-            <a href="#">FocusBox</a>
+            <img src="Icons/Notion.png" >
+            <a href="index.html" style="font-weight:bolder; color: #3353FF;">FocusBox</a>
         </div>
 
-        <!-- <hr class="fits-line"> -->
 
-        <div class="navicons">
-            <img src="Icons/Dash.png" > 
-            <a href="Dashboard.html">Dashboard</a>
-        </div>
         <div class="navicons">
             <img src="Icons/normtask.png" style="width: 38px; height: 38px;">
             <a href="Tasks.html">Tasks</a>
-        </div>
-        <div class="navicons">
-            <img src="Icons/Calender.png" >
-            <a href="#">Calendar</a>
         </div>
         <div class="navicons">
             <img src="Icons/Docactive.png" style="width: 27px; height: 32px;" >
             <a href="document.html"><span class="Tasks-link">Document</span></a>
         </div>
         <div class="navicons">
-            <img src="Icons/Trash.png" >
-            <a href="Trash.html">Trash</a>
+            <img src="Icons/notes.svg" style="width: 27px; height: 32px;" >
+            <a href="Notes.html">Notes</a>
+        </div>
+        <div class="navicons">
+            <img src="Icons/water.svg" style="width: 27px; height: 32px;" >
+            <a href="Water.html">Water Tracker</a>
         </div>
     </div>
 
     <div class="Maincontain-2">
-    <!--Profile Picture and time-->
     <div class="Profile-nav">
         <div class="time">
-            <p>11:22 PM</p>
+            <p id="timeDisplay">11:22 PM</p>
         </div>
     
         <div class="Profile">
@@ -175,50 +233,31 @@
         </div>
     </div>
 
-    <!--Profile Picture and time-->
     <div class="Task-bar">
         <h1>Documents</h1>
-        <button class="create-tasks-btn">Upload Docs + </button>
-    </div>
+        <button class="create-tasks-btn" onclick="openUploadModal()">Upload Docs +</button>
+
+        <div id="uploadModal" style="display:none; position:fixed; top:20%; left:30%; width:40%; background:#333; color:#fff; padding:20px; border-radius:10px;">
+            <h3>Upload Document</h3>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <label for="docName">Name:</label><br>
+                <input type="text" id="docName" name="docName" required><br><br>
+                <label for="docDesc">Description:</label><br>
+                <textarea id="docDesc" name="docDesc" rows="4" required></textarea><br><br>
+                <label for="docFile">Select Document:</label><br>
+                <input type="file" id="docFile" name="docFile" required><br><br>
+                <button type="button" onclick="uploadDocument()">Upload</button>
+                <button type="button" onclick="closeUploadModal()">Cancel</button>
+            </form>
+        </div>
+        </div>
 
     <hr class="Line"> 
 
     <div class="Mastercards-div">
-    <!--Tasks Card 1-->
     <div class="task-cards">
         <div class="heading-del">
-            <h2>Web Tech Assigment-1</h2>
-
-            <div class="delete">
-                <img src="Icons/Trash.png" style="width: 20px; height: 20px;">
-            </div>
-        </div>
-
-        <p>The assignment is very long, we need to<br> work on it as soon as possible. this<br> assignment covers diverse topics such as...</p>
-    
-    </div>
-
-    <!--Tasks Card 2-->
-    <div class="task-cards">
-        <div class="heading-del">
-            <h2>Web Tech Assigment-1</h2>
-
-            <div class="delete">
-                <img src="Icons/Trash.png" style="width: 20px; height: 20px;">
-            </div>
-        </div>
-
-        <p>The assignment is very long, we need to<br> work on it as soon as possible. this<br> assignment covers diverse topics such as...</p>
-    
-    </div>
-    <!--Tasks Card 3-->
-    <div class="task-cards">
-        <div class="heading-del">
-            <h2>Web Tech Assigment-1</h2>
-
-            <div class="delete">
-                <img src="Icons/Trash.png" style="width: 20px; height: 20px;">
-            </div>
+            <h2>Example Display Card-1</h2>
         </div>
 
         <p>The assignment is very long, we need to<br> work on it as soon as possible. this<br> assignment covers diverse topics such as...</p>
@@ -230,4 +269,99 @@
 </div>
     
 </body>
+<script>
+function displayDocument(name, desc, path) {
+    const container = document.querySelector('.Mastercards-div');
+    const card = document.createElement('div');
+    card.classList.add('task-cards');
+
+    card.innerHTML = `
+        <div class="heading-del">
+            <h2>${name}</h2>
+        </div>
+        <p>${desc}</p>
+        <a href="${path}" download>Download</a>
+    `;
+    container.appendChild(card);
+}
+
+function openUploadModal() {
+    document.getElementById('uploadModal').style.display = 'block';
+}
+
+function closeUploadModal() {
+    document.getElementById('uploadModal').style.display = 'none';
+}
+
+function uploadDocument() {
+    const form = document.getElementById('uploadForm');
+    const formData = new FormData(form);
+
+    fetch('upload.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Document uploaded successfully');
+            closeUploadModal();
+            displayDocument(data.fileName, data.fileDesc, data.filePath);
+        } else {
+            alert('Error: ' + data.message);
+        }
+    })
+    .catch(err => console.error(err));
+}
+
+function fetchFiles() {
+    fetch('fetch_files.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const container = document.querySelector('.Mastercards-div');
+                container.innerHTML = ''; 
+                data.files.forEach(file => {
+                    displayDocument(file.name, file.description, file.path);
+                });
+            } else {
+                console.error('Failed to fetch files');
+            }
+        })
+        .catch(err => console.error(err));
+}
+
+window.onload = function() {
+    fetchFiles();
+}
+    function updateTime() {
+        const now = new Date();
+        
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let period = "AM";
+
+        if (hours >= 12) {
+            period = "PM";
+            if (hours > 12) {
+                hours -= 12; 
+            }
+        } else if (hours === 0) {
+            hours = 12; 
+        }
+
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+
+        const timeString = hours + ":" + minutes + " " + period;
+
+        document.getElementById('timeDisplay').innerText = timeString;
+    }
+
+    setInterval(updateTime, 1000);
+
+    updateTime();
+
+</script>
 </html>

@@ -4,29 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In</title>
-    <link rel="icon" href="img-landingpage/Product 1.png" type="image/png" />
+    <link rel="icon" href="Icons/Notion.png" type="image/png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <!-- <link rel="stylesheet" href="Main-singin.css" /> -->
     <style>
-    * {
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: "Roboto", sans-serif;
-    }
-    body {
+      }
+
+      body {
         background-color: #1e1e1e;
         color: #ffffff;
         display: flex;
         align-items: center;
         justify-content: center;
         min-height: 100vh;
-    }
+      }
 
-    .container {
+      .container {
         display: flex;
         flex-direction: row;
         background-color: #333333;
@@ -34,66 +34,66 @@
         overflow: hidden;
         max-width: 800px;
         width: 100%;
-    }
+      }
 
-    .form{
+      .form {
         flex: 1;
         padding: 30px;
         display: flex;
         flex-direction: column;
         gap: 10px;
         background-color: #333333;
-    }
+      }
 
-    .back-btn {
+      .back-btn {
         color: #ffffff;
         text-decoration: none;
         font-size: 18px;
         margin-bottom: 10px;
-    }
+      }
 
-    h1 {
-        color: #3353FF;
+      h1 {
+        color: #3353ff;
         margin-bottom: 5px;
-    }
+      }
 
-    p {
+      p {
         margin-bottom: 10px;
         font-size: 14px;
-    }
+      }
 
-    input[type="email"],
-    input[type="password"] {
-        width: 100%;  
-        padding: 12px; 
-        margin: 10px 0; 
-        border: none;   
-        border-radius: 8px;   
-        background-color: #2e2e2e;   
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+        background-color: #2e2e2e;
         color: #ffffff;
         transition: all 0.3s ease;
-    }
-    button {
+      }
+      button {
         width: 100%;
         padding: 10px;
         margin-top: 10px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-    }
+      }
 
-    button[type="submit"] {
-        background-color: #3353FF;
+      button[type="submit"] {
+        background-color: #3353ff;
         color: #ffffff;
-    }
+      }
 
-    .or {
+      .or {
         text-align: center;
         margin: 10px 0;
         color: #999999;
-    }
+      }
 
-    .fb-btn {
+      .fb-btn {
         border-radius: 30px;
         background-color: #444444;
         color: #ffffff;
@@ -101,8 +101,9 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-    }
-    .g-btn{
+      }
+
+      .g-btn {
         border-radius: 30px;
         background-color: #444444;
         color: #ffffff;
@@ -110,57 +111,74 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-    }
-    .signup-link {
+      }
+
+      .signup-link {
         text-align: center;
         margin-top: 10px;
         font-size: 14px;
-    }
+      }
 
-    .signup-link a {
-        color: #3353FF;
+      .signup-link a {
+        color: #3353ff;
         text-decoration: none;
-    }
+      }
 
-    .signup-link a:hover {
+      .signup-link a:hover {
         text-decoration: underline;
-    }
-    .signinimg  {
+      }
+
+      .signinimg {
         flex: 1;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: #ffffff;
         padding: 20px;
-    }
-    .signinimg img {
+      }
+
+      .signinimg img {
         max-width: 80%;
         height: auto;
         object-fit: contain;
-    }
-    .line{
+      }
+
+      .line {
         display: inline-block;
         width: 150px;
-        flex: 1; 
+        flex: 1;
         height: 3px;
-        background-color: #ffffff; 
-        border: none; 
-    }
-    .or-container {
+        background-color: #ffffff;
+        border: none;
+      }
+
+      .or-container {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px; 
-        margin: 20px 0; 
-    }
-    .or {
-        margin: 0; 
-        padding: 0 10px; 
-    }
+        gap: 10px;
+        margin: 20px 0;
+      }
+
+      .or {
+        margin: 0;
+        padding: 0 10px;
+      }
+
+      .messageDiv {
+        background-color: hsl(327, 90%, 28%);
+        color: white;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 5px;
+        font-size: 1rem;
+        opacity: 0;
+        animation: fadeOut 7s forwards;
+      }
     </style>
   </head>
   <body>
-    <div class="container">
+<div class="container">
       <div class="form">
         <a href="Main-signup.html" class="back-btn">← Back</a>
 
@@ -169,37 +187,37 @@
           Fill in the appropriate info to sign in to your account on FocusBox
         </p>
 
-        <form>
+        <form id="signinForm">
+          <div
+            id="signInMessage"
+            class="messageDiv"
+            style="display: none"
+          ></div>
+
+          <input id="email" type="email" placeholder="Email Address" required />
           <input
-            type="email"
-            placeholder="Email Address"
+            id="password"
+            type="password"
+            placeholder="Password"
             required
-            pattern=".+@gmail\.com"
           />
-          <input type="password" placeholder="Password" required />
 
           <button type="submit">Sign In</button>
-
-          <div class="or-container">
-          <hr class="line">
-          <p class="or">OR</p>
-          <hr class="line">
-          </div>
-
-          <button class="g-btn"><img src="images/g-icon.png" style="width: 20px; height: 20px;"> Continue with Google</button>
-          <button class="fb-btn"><img src="images/fb-icon.png" style="width: 25px; height: 25px;">Continue with Facebook</button>
-
         </form>
 
         <p class="signup-link">
           Don’t have an account? <a href="Main-signup.html">Sign Up</a>
+        </p>
+        <p class="signup-link">
+          Change your password? <a href="password.html">Change Password</a>
         </p>
       </div>
 
       <div class="signinimg">
         <img src="images/signin.png" alt="sign-in-image" />
       </div>
-      
     </div>
-  </body>
+    <script type="module" src="firebaseauth.js"></script>
+
+</body>
 </html>

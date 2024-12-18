@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Icons/Notion.png" type="image/png" />
+    <title>Notes</title>
+    <style>
+        body {
+            color: white;
+            background-color: #191919;
+            font-family: "Roboto", sans-serif;
+
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+
+            height: 100vh;
+        }
+        .Maincontain-2 {
+            flex-grow: 1;
+            height: 100%;
+            margin-top: 25px;
+        }
+        .side-nav {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 17%;
+            height: 600px;
+            margin-left: 25px;
+            margin-top: 25px;
+            padding-left: 35px;
+            padding-top: 30px;
+            border-radius: 35px;
+            font-size: 22px;
+        }
+        .side-nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .side-nav img {
+            width: 30px;
+            height: 30px;
+        }
+        .navicons {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 5px 0;
+        }
+        .Tasks-link {
+            color: #3353FF;
+            font-weight: bolder;
+        }
+        .fits-line {
+            width: 100%;
+            padding-left: 0;
+        }
+        .Profile-nav {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        .time {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            font-size: 25px;
+            width: 130px;
+            height: 60px;
+            border-radius: 50px;
+        }
+        .Profile img {
+            width: 60px;
+            height: 60px;
+        }
+        .Task-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 10px;
+        }
+        .Task-bar button {
+            background-color: #3353FF;
+            color: white;
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 7px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); 
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #191919;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .modal-content input, .modal-content textarea {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+        }
+
+        .modal-content button {
+            background-color: #3353FF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .modal-content button:hover {
+            background-color: #0056b3;
+        }
+
+        .close-btn {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: white;
+        }
+
+        /* Notes Display */
+        .note {
+            background-color: #282828;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .note h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .note p {
+            font-size: 14px;
+        }
+
+        .delete-btn {
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: darkred;
+        }
+        .Task-bar h1{
+        color: #3353FF;
+    }
+    .Maincontain-2 .Profile-nav {
+    justify-content: flex-end;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="side-nav">
+        <div class="navicons">
+            <img src="Icons/Notion.png" >
+            <a href="index.html" style="font-weight:bolder; color: #3353FF;">FocusBox</a>
+        </div>
+
+
+        <div class="navicons">
+            <img src="Icons/normtask.png" style="width: 38px; height: 38px;">
+            <a href="Tasks.html">Tasks</a>
+        </div>
+        <div class="navicons">
+            <img src="Icons/Doc.png" style="width: 27px; height: 32px;" >
+            <a href="document.html">Document</a>
+        </div>
+        <div class="navicons">
+            <img src="Icons/notesactive.svg" style="width: 27px; height: 32px;" >
+            <a href="Notes.html"><span class="Tasks-link">Notes</span></a>
+        </div>
+        <div class="navicons">
+            <img src="Icons/water.svg" style="width: 27px; height: 32px;" >
+            <a href="Water.html">Water Tracker</a>
+        </div>
+    </div>
+
+    <div class="Maincontain-2">
+        <div class="Profile-nav">
+            <div class="time">
+                <p id="timeDisplay">11:22 PM</p>
+            </div>
+        
+            <div class="Profile">
+                <img src="Icons/dicsord-img.png" >
+            </div>
+        </div>
+
+        <div class="Task-bar">
+            <h1>Notes</h1>
+            <button class="create-tasks-btn">Add Notes + </button>
+        </div>
+
+        <hr class="Line">
+
+        <div id="notes-list">
+            <!-- Notes will be populated here by JavaScript -->
+        </div>
+    </div>
+
+    <div id="addNoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Note</h2>
+            <input type="text" id="note-title" placeholder="Enter note title" required />
+            <textarea id="note-description" rows="4" placeholder="Enter note description" required></textarea>
+            <button id="save-note-btn">Save Note</button>
+            <button id="cancel-note-btn">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNotes();
+
+            document.getElementById('notes-list').addEventListener('click', function(e) {
+                if (e.target && e.target.classList.contains('delete-btn')) {
+                    const noteId = e.target.getAttribute('data-id');
+                    deleteNote(noteId);
+                }
+            });
+
+            document.querySelector('.create-tasks-btn').addEventListener('click', function() {
+                openModal();
+            });
+
+            document.querySelector('.close-btn').addEventListener('click', closeModal);
+
+            document.getElementById('save-note-btn').addEventListener('click', function() {
+                const title = document.getElementById('note-title').value;
+                const description = document.getElementById('note-description').value;
+                if (title && description) {
+                    addNote(title, description);
+                    closeModal(); 
+                }
+            });
+
+            document.getElementById('cancel-note-btn').addEventListener('click', closeModal);
+        });
+
+        function loadNotes() {
+            fetch('get_notes.php')
+                .then(response => response.json())
+                .then(notes => {
+                    const notesList = document.getElementById('notes-list');
+                    notesList.innerHTML = ''; 
+
+                    notes.forEach(note => {
+                        const noteDiv = document.createElement('div');
+                        noteDiv.classList.add('note');
+                        noteDiv.innerHTML = `
+                            <h3>${note.title}</h3>
+                            <p>${note.description}</p>
+                            <button class="delete-btn" data-id="${note.id}">Delete</button>
+                        `;
+                        notesList.appendChild(noteDiv);
+                    });
+                })
+                .catch(error => console.error('Error loading notes:', error));
+        }
+
+        function addNote(title, description) {
+            fetch('add_note.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ title, description })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    loadNotes();  
+                } else {
+                    console.error('Failed to add note:', data.message);
+                }
+            })
+            .catch(error => console.error('Error occurred while adding note:', error));
+        }
+
+        function deleteNote(noteId) {
+            fetch('delete_note.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: noteId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    loadNotes();  
+                } else {
+                    console.error('Failed to delete note:', data.message);
+                }
+            })
+            .catch(error => console.error('Error occurred while deleting note:', error));
+        }
+
+        function openModal() {
+            document.getElementById('addNoteModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('addNoteModal').style.display = "none";
+        }
+    function updateTime() {
+        const now = new Date();
+        
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let period = "AM";
+
+        if (hours >= 12) {
+            period = "PM";
+            if (hours > 12) {
+                hours -= 12; 
+            }
+        } else if (hours === 0) {
+            hours = 12; 
+        }
+
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+
+        const timeString = hours + ":" + minutes + " " + period;
+
+        document.getElementById('timeDisplay').innerText = timeString;
+    }
+
+    setInterval(updateTime, 1000);
+
+    updateTime();
+
+    </script>
+</body>
+</html>
